@@ -37,6 +37,4 @@ export class CrewComponent implements OnInit {
     member['name'] = name;
     this.memberBeingEdited = null;
     }
-    
-  
 }
