@@ -1,7 +1,22 @@
 <h3>Equipment</h3>
 <ul>
-  <li>Habitat dome</li>
-  <li>Drones</li>
-  <li>Food containers</li>
-  <li>Oxygen tanks</li>
+  <li *ngFor="let tool of equipment">
+    <span *ngIf="equipentBeingEdited !== tool; else elseBlock">
+      <span (click)="edit(tool)" class="editable-text">{{ tool.name }}</span>
+      <button (click)="remove(tool)">remove</button>
+    </span>
+  </li>
 </ul>
+
+<ng-template #elseBlock>
+  <input
+    #updatedTool
+    (keyup.enter)="save(updatedTool.value, tool)"
+    value="{{ tool.name }}"
+  />
+  <button (click)="save(updatedTool.value, tool)">save</button>
+</ng-template>
+
+<input #name type="text" />
+
+<button (click)="add(name.value)">Add</button>
