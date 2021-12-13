@@ -6,6 +6,7 @@
 button {
     margin: 2px;
     cursor: pointer;
+
 }
 
 h3 {
@@ -13,6 +14,12 @@ h3 {
 }
 
 /* Add an 'active' class to style the background of the 'Add to Cargo Hold' buttons. */
-
+.green{
+    background-color: green;
+}
 
 /* Add the 'nearMaxMass' class style here: */
+.nearMaxMass {
+    font: italic;
+    color: red;
+}
